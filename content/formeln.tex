@@ -1,0 +1,81 @@
+\section{Formeln}
+\begin{frame}{Formeln - \"Ubersicht}
+    \begin{exampleblock}{Neue Pakete}
+        \begin{multicols}{2}
+            \begin{itemize}\cblue
+                \item amsmath
+                \item amssymb\black
+            \end{itemize}
+        \end{multicols}
+    \end{exampleblock}
+    
+    \begin{exampleblock}{Neue Umgebungen}
+        \begin{multicols}{2}
+            \begin{itemize}\cpurple
+                \item align
+                \item equation\black
+            \end{itemize}
+        \end{multicols}
+    \end{exampleblock}
+    \begin{exampleblock}{Neue Befehle}
+        \centering Zu viele um sie hier aufzuf\"uhren
+    \end{exampleblock}
+\end{frame}
+\subsection{Einstieg}
+\begin{frame}{Formeln - Umgebungen}
+    Fangen wir also mal ganz einfach an. Mit \cred\$\black~kann man eine Intext-Formelumgebung (Inline) \"offenen und schlie{\ss}en. Beispielsweise f\"uhrt \cred\$\black 4+2=6\cred\$\black~hierzu $4+2=6$, was doch sehr sch\"on aussieht \smiley. \\\vspace{1.5mm}
+    Im Gegensatz zu der Intext-Umgebung gibt es auch eine Umgebung um Formeln \[ wie \sqrt[z.B.]{hier} \] in einer eigenen Zeile darzustellen. Um Formeln in einer eigenen Zeile darzustellen, benutzt man \cred\$\$ \black oder \cred \textbackslash[$\hdots$\textbackslash]\black~zum \"Offnen und Schlie{\ss}en der Umgebung.
+\end{frame}
+\begin{frame}{Formeln - Aufbau}
+Formeln in \LaTeX ~sind ineinander geschachtelte Befehle. Hier ein Beispiel:\\
+    \begin{columns}
+        \begin{column}{0.2\textwidth}
+        $$\sum\limits_{i=0}^n\sqrt[3]{i^{2+1}+\frac{1}{i}}$$\\
+        $$\sum\limits_{i=0}^n$$\\
+        $$\sqrt[3]{i^{2+1}+\frac{1}{i}}$$
+        \end{column}
+        \begin{column}{0.8\textwidth}
+        \small
+        $\underbrace{\cred\$\$\backslash sum\backslash limits\black\_\{i=0\}\text{\^{}}n}_{Summenzeichen}\underbrace{\cred\backslash sqrt\black[3]\{i\text{\^{}}\{2+i\}+\cred\backslash frac\black\{1\}\{i\}\}\cred\$\$}_{Wurzel}$\\\vspace{9mm}
+        $\underbrace{\cred\backslash sum}_{Sigma} \underbrace{\cred\backslash limits\black\_\{i=0\}\text{\^{}}n}_{Grenzen}$\\\vspace{9mm}
+        $\cred\backslash sqrt\black[3]\{i\text{\^{}}\{2+i\}+\underbrace{\cred\backslash frac\black\{1\}\{i\}}_{Bruch}\}$
+        \end{column}
+    \end{columns}
+\end{frame}
+\subsection{Beispiele}
+\begin{frame}{Formeln - Ausgew\"ahlte Beispiele}
+ \begin{columns}
+ \begin{column}{.4\textwidth}
+ $$\int_0^\infty$$\\\vspace{.35cm}
+ \centering{$\sum_{i=1}^n$} | $\sum\limits_{i=1}^n$\\\vspace{.5cm}
+  $\lim_{n\rightarrow\infty}$\\\vspace{.35cm}
+  $\prod\limits_{i=1}^{n+1} i=1 \cdot 2 \cdot \ldots \cdot n \cdot (n+1)$
+ \end{column}
+ \begin{column}{.7\textwidth}
+ $\cred\$\$\backslash int\black\_0\text{\^{}}\backslash infty\cred\$\$$\\\vspace{.65cm}
+ $\cred\$\backslash sum\black\_\{i=1\}\text{\^{}}n\cred\$$ | $\cred\$\backslash sum\backslash limits\black\_\{i=1\}\text{\^{}}n\cred\$$\\\scriptsize
+ Hier sieht man den Einfluss von \textbackslash limits in der Intextumgebung.\normalsize\\\vspace{.6cm}
+ $\cred\$\backslash lim\black\_\{n\cred\backslash rightarrow\backslash infty\black\}\cred\$\black$\\\vspace{.45cm}
+ $\cred\$\backslash prod\black\_\{n+1\}\text{\^{}}\{n+1\}~i=1~\cred\backslash cdot\black~ 2~\newline\cred\backslash cdot ~\backslash ldots~ \backslash cdot\black~ n~ \cred\backslash cdot~\black(n+1)\cred\$\black$
+ \end{column}
+ \end{columns}
+\end{frame}
+\begin{frame}{Klammern und Zeichen}
+\begin{columns} 
+ \begin{column}{.3\textwidth}
+  Klammern:\\\vspace{.1cm}
+  $(x),[y],\lbrace z\rbrace,\lvert b \rvert$\\\vspace{.3cm}
+  Mitwachsende Klammern:\\\vspace{.2cm}
+  $\left(\frac{1}{\frac{2}{3}}\right)$\\\vspace{.3cm}
+  Diverse Symbole:\\\vspace{.1cm}
+  $\exists,\forall, \in, \notin, \infty$
+ \end{column}
+ \begin{column}{.6\textwidth}
+$\cred\$\black(x), [x],
+\cred\backslash lbrace\black~z~\cred\backslash rbrace\black, \cred\backslash lvert \black~b~\cred\backslash rvert\$ \black$\\\vspace{1.5cm}
+$\cred\$\backslash left\black(\cred\backslash frac\black\{1\}\{\cred\backslash frac\black\{2\}\{3\}\}\cred\backslash right\black)\cred\$\black$\\\vspace{.8cm}
+$\cred\$\backslash exists\black,\cred\backslash forall\black,\cred \backslash in\black, \cred\backslash notin\black, \cred\backslash infty\$\black$
+ \end{column}
+\end{columns}\vspace{.5cm}
+Ein Verzeichnis weiterer (mathematischer) Zeichen und Symbole:\\ \small\url{http://tug.ctan.org/info/symbols/comprehensive/symbols-a4.pdf}
+\end{frame}

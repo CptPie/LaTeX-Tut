@@ -1,0 +1,77 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%% Usepackages und Definitionen %%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% Usepackages %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \usepackage{cmbright}
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage[german]{babel}
+    \usepackage{amssymb}
+    \usepackage{amsmath}
+    \usepackage{amsfonts}
+    \usepackage{cleveref}
+    \usepackage{verbatim}
+    \usepackage{multicol}
+    \usepackage{listings}
+    \usepackage{wasysym}
+    \usepackage{eurosym}
+    \usepackage{tcolorbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%% TODO NOTES %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+\newcounter{todo}
+\newtcbox{\mytodobox}{colback=orange,colframe=orange!75!black}
+
+\newcommand\todo[1]{%
+    \refstepcounter{todo} 
+    \mytodobox{\hypertarget{todo\thetodo}{#1}}
+    \addcontentsline{tod}{subsection}{\protect\hyperlink{todo\thetodo}{\thetodo~#1}\par} 
+}%
+
+\makeatletter
+\newcommand\listoftodos{%
+    \@starttoc{tod}}
+\makeatother
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% Color Definitions %%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\definecolor{MainGreen}{RGB}{65, 146, 75}
+\definecolor{cred}{RGB}{210, 0, 70}
+\definecolor{corange}{RGB}{220, 140, 0}
+\definecolor{cturkis}{RGB}{0, 150, 150}
+\definecolor{cpurple}{RGB}{160, 0, 255}
+\definecolor{cblue}{RGB}{0, 125, 255}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% Neue Befehle weil zu faul :D %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand\black{\color{black}}
+\newcommand\cred{\color{cred}}
+\newcommand\cpurple{\color{cpurple}}
+\newcommand\cturkis{\color{cturkis}}
+\newcommand\cblue{\color{cblue}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%% Metadaten %%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\author[Fabian Lamprecht \and test1 \and test2]{{Fabian Lamprecht\newline\footnotesize fabian.lamprecht@stud.uni-bamberg.de}\vspace{2.5mm}\newline\and{test1\newline\footnotesize test1@stub.de}\vspace{2.5mm}\newline\and{test2\newline\footnotesize bla@blub.de}}
+\title{\LaTeX~Einf\"uhrung}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%% Beamer-Setup %%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usetheme[compact]{Berlin}
+\setbeamercolor{normal text}{bg={black!20!white}}
+\usecolortheme[named=MainGreen]{structure}

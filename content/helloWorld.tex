@@ -1,0 +1,55 @@
+\section{Hello World!}\subsection{Hello World!}
+\begin{frame}[fragile]{Hello World!}{Grundlagen}
+\begin{exampleblock}{Neue Befehle:}
+\begin{itemize} %cred cturkis cpurple corange
+    \item \color{cred} \textbackslash documentclass\color{black}[\color{corange}options\color{black}]\{\color{cpurple}class\color{black}\}
+    \item \color{cred}\textbackslash usepackage\color{black}\{\color{cblue}package\color{black}\}
+    \item \color{cturkis}\textbackslash begin\color{black}\{\color{cpurple}environment\color{black}\}
+    \item \color{cturkis}\textbackslash end\color{black}\{\color{cpurple}environment\color{black}\}
+\end{itemize}
+\end{exampleblock}
+\end{frame}
+\begin{frame}{Hello World!}{Der Anfang}
+Jedes \LaTeX-Dokument beginnt mit der Dokumentdefinition:\\ \vspace{1.5mm}
+\color{cred} \textbackslash documentclass\color{black}[\color{corange}options\color{black}]\{\color{cpurple}class\color{black}\}\\\vspace{2.5mm}
+\begin{multicols}{2}
+\color{corange}options\color{black}\\
+\begin{itemize}
+    \item Schriftgr\"o{\ss}e in pt: z.B. \color{corange}12pt\color{black}
+    \item Papierformat z.B. \color{corange}a4paper\color{black}
+    \item Standartsprache z.B. \color{corange}ngerman \color{black} deutsche Formatierungen und (Trenn-)Regeln
+\end{itemize}
+Alle Variablen sind optional.\columnbreak\pause
+
+\color{cpurple}class\color{black}
+\begin{itemize}
+    \item einfache Dokumente z.B. \color{cpurple}scrartcl, article\color{black}
+    \item komplexe Dokumente z.B. \color{cpurple}scrreprt, report\color{black}
+    \item B\"ucher z.B. \color{cpurple}scrbook, book\color{black}
+    \item Pr\"asentationen z.B. \color{cpurple}beamer, seminar\color{black}
+\end{itemize}
+\end{multicols}
+\normalsize
+\end{frame}
+\begin{frame}{Hello World!}{Packages}
+    Mit dem Befehl \color{cred}\textbackslash usepackage\color{black}\{\color{cblue}package\color{black}\} kann die Basisfunktionalit\"at von \LaTeX~um weitere Funktionen erweitert werden. Die Pakete werden direkt nach der Dokumentdefinition eingebunden. Die Verwendung von Usepackages ist NICHT verpflichtend, jedoch meist nicht zu Umgehen.\\\vspace{1mm}
+    Einige wichtige Usepackages:
+    \begin{itemize}
+        \item \color{cblue}babel \color{black}- support f\"ur zahlreiche Sprachen, mehrere Sprachen in einem Dokument
+        \item \color{cblue}inputenc \color{black}- zu verwendender Zeichensatz i.d.R. \color{corange}utf8 \color{black}(als Option)
+        \item \color{cblue}fontenc \color{black}- Darstellung von Sonderzeichen, i.d.R. \color{corange}T1 \color{black}(als Option)
+    \end{itemize}
+\end{frame}
+\begin{frame}{Hello World!}{Umgebungen}
+    Umgebungen sind neben der Dokumentdefinition und den Usepackages der dritte grundlegende Baustein jedes \LaTeX-Dokuments. Umgebungen werden mit \color{cturkis}\textbackslash begin\color{black}\{\color{cpurple}environment\color{black}\} ge\"offnet und mit \color{cturkis}\textbackslash end\color{black}\{\color{cpurple}environment\color{black}\} wieder geschlossen. \\\vspace{1.5mm}F\"ur den Anfang betrachten wir zun\"achst die Umgebung \color{cpurple}document\color{black}. Innerhalb der Dokumentumgebung steht der Inhalt unseres Dokuments.
+\end{frame}
+\begin{frame}{Hello World!}{Das \glqq Hello World!\grqq-Dokument}
+    Nachdem wir die Theorie nun durch haben k\"onnen wir unser erstes Dokument schreiben.\\\vspace{2.5mm}
+    \color{cred}\textbackslash documentclass\color{black}[\color{corange}10pt, a4paper, ngerman \color{black}]\{\color{cpurple}scrartcl\color{black}\}\\
+    \color{cturkis}\textbackslash begin\color{black}\{\color{cpurple}document\color{black}\}\\
+    Hello World!\\
+    \color{cturkis}\textbackslash end\color{black}\{\color{cpurple}document\color{black}\}\\\vspace{2.5mm}
+    Was dann zu diesem Ergebnis f\"uhrt:\\\vspace{2.5mm}
+    \begin{center}\textrm{Hello World!}\end{center}
+    
+\end{frame}

@@ -1,0 +1,122 @@
+\section{Tabellen}\subsection{Einfache Tabellen}
+\begin{frame}{Tabellen}{\"Ubersicht}
+   \begin{exampleblock}{Neue Pakete}
+        \begin{multicols}{2}
+        \begin{itemize}
+            \item \color{cblue}longtable
+            \item float \color{black}
+        \end{itemize}
+        \end{multicols}
+   \end{exampleblock}
+   \begin{block}{Neue Umgebungen}
+        \begin{multicols}{3}
+        \begin{itemize}
+            \item \color{cpurple}tabular
+            \item table
+            \item longtable\color{black}
+        \end{itemize}
+        \end{multicols}
+   \end{block}
+   \begin{block}{Neue Befehle}
+        \begin{multicols}{2}
+        \begin{itemize}
+            \item \color{cred}\textbackslash hline
+            \columnbreak
+            \item \color{cturkis}\textbackslash multicolumn\color{black}\{Spaltenzahl\}\\\{Spaltenausrichtung\}\{Text\}
+        \end{itemize}
+        \end{multicols}
+   \end{block}
+\end{frame}
+\begin{frame}{Tabellen}{Keine sch\"one Sache \frownie}
+   Tabellen in \LaTeX~sind anfangs wirklich nicht komfortabel zu erstellen. Das geht soweit, dass es Websides gibt, welche Tabellen zu \LaTeX-Code umwandeln (\small\url{http://www.tablesgenerator.com/}\normalsize).\\
+   Aber wir wollen sie per Hand erstellen k\"onnen, was f\"ur einfache Tabellen eigentlich gar nicht allzu schwer ist.
+\end{frame}
+\begin{frame}{Aufbau von Tabellen}
+   Aufbau:\\\vspace{1.5mm}
+   \color{cturkis}\textbackslash begin\color{black}\{\color{cpurple}tabular\color{black}\}\{Spaltendefinitionen\}\\
+   \textit{Tabelleninhalt}\\
+   \color{cturkis}\textbackslash end\color{black}\{\color{cpurple}tabular\color{black}\}\\\vspace{1.5mm}
+   Spaltendefinitionen:\\\vspace{1.5mm}
+   \begin{tabular}{ll}
+        l & linksb\"undig \\
+        c & zentriert\\
+        r & rechtsb\"undig\\
+        p\{Breite\} & Feste Spaltenbreite\\
+        \color{cred}|\color{black} & Senkrechter Strich zur Spaltentrennung
+   \end{tabular}
+\end{frame}
+\begin{frame}{Aufbau von Tabellen}
+   Aufbau:\\\vspace{1.5mm}
+   \color{cturkis}\textbackslash begin\color{black}\{\color{cpurple}tabular\color{black}\}\{Spaltendefinitionen\}\\
+   \textit{Tabelleninhalt}\\
+   \color{cturkis}\textbackslash end\color{black}\{\color{cpurple}tabular\color{black}\}\\\vspace{1.5mm}
+   Tabelleninhalt:\\\vspace{1.5mm}
+   \begin{tabular}{ll}
+        \color{cred}\&\color{black} & Spaltentrennung\\
+        \color{cred}\textbackslash\textbackslash\color{black} & Zeilenende/Neue Zeile\\
+        \color{cred}\textbackslash hline\color{black} & horizontale Linie\\
+        \color{cturkis}\textbackslash multicolumn\color{black}\{Spaltenzahl\} & Verbindet beliebig viele Spalten\\\{Spaltenausrichtung\}\{Text\}&miteinander
+   \end{tabular}
+\end{frame}
+\begin{frame}{Eine Einfache Tabelle}
+   \color{cturkis}\textbackslash begin\color{black}\{tabular\}\{c|p\{30mm\}|lr||c\}\\
+   \textbackslash multicolumn\{5\}\{c\}\{Ergebnistabelle\}\\
+   \color{cred}\textbackslash hline \textbackslash hline  \textbackslash\textbackslash\color{black}\\
+   Nummer \& Ort \& Spieler 1 \& Spieler 2 \& Ergebnis \color{cred}\textbackslash\textbackslash~\textbackslash hline\color{black}\\ 
+   1 \& Bamberg \& Fuchs \& Bauer \& 23:10 \color{cred}\textbackslash\textbackslash~\textbackslash hline\color{black}\\
+   2 \& tba \& Wolf \& Baier \color{cred}\textbackslash\textbackslash~\textbackslash hline\color{black}\\
+   \color{cturkis}\textbackslash end\color{black}\{tabular\}\\\vspace{1.5mm}
+   F\"uhrt beispielsweise zu folgender Tabelle:\\\vspace{1.5mm}
+   \begin{tabular}{c|p{30mm}|lr||c}
+    \multicolumn{5}{c}{Ergebnistabelle}\\
+    \hline \hline
+    Nummer & Ort & Spieler 1 & Spieler 2 & Ergebnis \\\hline
+    1 & Bamberg & Fuchs & Bauer & 23:10 \\ \hline
+    2 & tba & Wolf & Baier \\\hline
+   \end{tabular}
+\end{frame}
+\begin{frame}{Zeilenumbr\"uche \& lange Tabellen}
+Bei festgelegter Spaltenbreite (p\{Breite\}) bricht \LaTeX~ automatisch die Zeilen um.\\
+\begin{center}
+\begin{tabular}{|p{20mm}|c|}\hline
+    Langer Text &  bla\\\hline
+    Sehr langer Text & blub \\\hline
+\end{tabular}
+\end{center}
+\vspace{3mm}Au\ss erdem k\"onnen wir anstatt der \color{cpurple}tabular\color{black}-Umgebung auch die \color{cpurple}longtable\color{black}-Umgebung nutzen, welche es erm\"oglicht, Tabellen \"uber mehrere Seiten fortzuf\"uhren.\\\vspace{2mm}
+\color{cturkis}\textbackslash begin\color{black}\{\color{cpurple}longtable\color{black}\}\{Spaltendefinitionen\}\\
+   \textit{Tabelleninhalt}\\
+   \color{cturkis}\textbackslash end\color{black}\{\color{cpurple}longtable\color{black}\}\
+\end{frame}
+\subsection{Erweiterte Funktionen}
+\begin{frame}{Erweiterte Funktionen}
+Tabellen k\"onnen mit Hilfe der \color{cpurple}table\color{black}-Umgebung und dem Usepackage \color{cturkis}float\color{black}~um einige Funktionalit\"aten erweitert werden.\\\vspace{2mm}
+Dazu erstellen wir zun\"achst eine \glqq normale\grqq~Tabelle. \uncover<2->{Und erweitern sie um diese Ausdr\"ucke.}\\\vspace{3mm}\small
+
+\uncover<2->{
+\color{cturkis}\textbackslash begin\color{black}\{table\}[H]\\
+\color{cturkis}\textbackslash centering\\
+}
+~~~~~~~~\color{cturkis}\textbackslash begin\color{black}\{tabular\}\{|p\{20mm\}|c|\}\color{cred}\textbackslash hline \color{black}\\
+~~~~~~~~Langer Text \color{cred}\&~\color{black} bla \color{cred}\textbackslash\textbackslash\textbackslash hline\\\color{black}
+~~~~~~~~Sehr langer Text \color{cred}\&~\color{black} blub \color{cred}\textbackslash\textbackslash\textbackslash hline\color{black}\\
+~~~~~~~~\color{cturkis}\textbackslash end\color{black}\{tabular\}\\
+\uncover<2->{
+\color{cturkis}\textbackslash caption\color{black}\{Unsere Tabelle!\}\\
+\color{cblue}\textbackslash label\color{black}\{tab:Tabelle1\}\\
+\color{cturkis}\textbackslash end \color{black}\{table\}
+}\normalsize
+\end{frame}
+\begin{frame}{Erweiterte Funktionen}
+Also fangen wir mal oben an. Die \color{cpurple}table\color{black}-Umgebung wird f\"ur die erweiterten Funktionen ben\"otigt (damit \LaTeX~wei\ss, worauf sich die Befehle beziehen).\\
+In den eckigen Klammern wird die Position der Tabelle angegeben.\\
+\begin{itemize}
+    \item h - \glqq here\grqq; hier, wenns geht
+    \item t - \glqq top\grqq; am Anfang der Seite
+    \item b - \glqq bottom\grqq; am Ende der Seite
+    \item p - \glqq page\grqq; auf einer eigenen Seite
+    \item H - \glqq Here\grqq; hier, auf jeden Fall (ben\"otigt Usepackage \color{cblue}float\color{black})
+\end{itemize}
+\color{cturkis}\textbackslash caption \color{black}f\"ugt einen Untertitel hinzu, mit \color{cblue}\textbackslash label~\color{black} geben wir der Tabelle eine einzigartige Bezeichnung (dazu sp\"ater mehr).\\
+\vspace{3mm}\color{cpurple}longtable\color{black}~ben\"otigt die \color{cpurple}table\color{black}-Umgebung~NICHT, longtable ist eine eigene Umgebung.
+\end{frame}

@@ -1,0 +1,184 @@
+\section{Formatierung und Layout}
+\begin{frame}{\"Ubersicht}
+\begin{exampleblock}{Neue Umgebungen:}
+\begin{multicols}{3}
+\begin{itemize}
+    \item \color{cpurple}enumerate
+\end{itemize}\columnbreak
+\begin{itemize}
+    \item \color{cpurple}itemize
+\end{itemize}\columnbreak
+\begin{itemize}
+    \item \color{cpurple}tabbing
+\end{itemize}
+\end{multicols}\color{black}
+\end{exampleblock}
+    \begin{block}{Neue Befehle:}
+        \begin{multicols}{2}
+        \begin{itemize}
+            \item \color{cturkis}\textbackslash textbf\color{black}\{Text\}
+            \item \color{cturkis}\textbackslash textit\color{black}\{Text\}
+            \item \color{cturkis}\textbackslash underline\color{black}\{Text\}
+            \item \color{cred}\textbackslash\textbackslash\color{black}
+            \item\color{cturkis}\textbackslash hspace\color{black}\{\color{corange}L\"ange\color{black}\}
+            \item\color{cturkis}\textbackslash vspace\color{black}\{\color{corange}L\"ange\color{black}\}
+            \item \color{cred}\textbackslash item \color{black} $\hdots$
+        \end{itemize}\columnbreak
+        \begin{itemize}
+            \item \color{cturkis}\textbackslash section\color{black}\{Titel\}
+            \item \color{cturkis}\textbackslash subsection\color{black}\{Titel\}
+            \item \color{cturkis}\textbackslash subsubsection\color{black}\{Titel\}
+            \item \color{cturkis}\textbackslash tableofcontents
+            \item \color{cred}\textbackslash= \textbackslash>
+            \item \color{cred}\textbackslash kill
+        \end{itemize}
+        \end{multicols}
+        
+    \end{block}
+\end{frame}
+\subsection{Einfache Formatierungen}
+\begin{frame}{Fett, kursiv und unterstreichen}
+    Die g\"angigen Formatierungen \textbf{fett}, \textit{kursiv} und \underline{unterstrichen} werden in \LaTeX~durch Befehle realisiert.
+    \begin{itemize}
+        \item \textbf{fett} - \color{cturkis}\textbackslash textbf\color{black}\{fetter Text\}
+        \item \textit{kursiv} -\color{cturkis}\textbackslash textit\color{black}\{kursiver Text\}
+        \item \underline{unterstrichen} -\color{cturkis}\textbackslash underline\color{black}\{unterstrichener Text\}
+    \end{itemize}\pause
+    Diese Formatierungen sind auch kumulativ verwendbar, so f\"uhrt \color{cturkis}\textbackslash textbf\color{black}\{\color{cturkis}\textbackslash textit\color{black}\{Hallo!\}\} zu diesem Ergebnis:
+    \begin{center}
+    \textrm{\textbf{\textit{Hallo!}}}
+    \end{center}\pause
+    Hier ist noch zu bemerken, dass bei verschiedenen Schriftarten die kumulative Verwendung nicht m\"oglich sein kann. (z.B. auch bei der f\"ur die Pr\"asentation verwendeten \smiley)
+\end{frame}
+\begin{frame}[fragile]{Textlayout}
+    Einen einfachen Zeilenumbruch erzeugt man mit \color{cred}\textbackslash\textbackslash\color{black}. Eine Leerzeile entweder mit 2 Zeilenumbr\"uchen (Compiler kann Warnings werfen) oder durch eine Leerzeile im Dokument.
+    \textrm{\begin{multicols}{2}
+        Nach diesem Satz kommt ein Zeilenumbruch.\color{cred}\textbackslash\textbackslash\color{black}\\
+        Und hiernach eine Leerzeile.\color{cred}\textbackslash\textbackslash\textbackslash\textbackslash\color{black}\\
+        Oder?\\
+        \columnbreak
+        Nach diesem Satz kommt ein Zeilenumbruch.\\
+        Und hiernach eine Leerzeile.\\
+        \vspace{\baselineskip}
+        Oder?
+    \end{multicols}}
+    Nat\"urlich kann man in \LaTeX~auch einfach eine neue Seite Anfangen, z.B. mit \color{cturkis}\textbackslash newpage\color{black}.
+\end{frame}
+\subsection{Wir nehmen den Text und schieben ihn wo anderst hin!}
+\begin{frame}{Einr\"uckungen und Whitespace}
+    Mit dem Befehl \color{cturkis}\textbackslash hspace\color{black}\{\color{corange}L\"ange\color{black}\} k\"onnen Einr\"uckungen erstellt werden. Als Eingaben werden die g\"angigsten L\"angeneinheiten akzeptiert von \color{corange}pt \color{black} \"uber  \color{corange}cm \color{black} zu \color{corange}in \color{black} und noch viele weitere. Beispielsweise bewirkt \color{cturkis}\textbackslash hspace\{\color{corange}1.5cm\color{black}\} diesen \hspace{1.5cm} Abstand.\\
+    Analog dazu bewirkt \color{cturkis}\textbackslash vspace\color{black}\{\color{corange}1.5cm\color{black}\} diesen \\\vspace{1.5cm} Abstand nach einem \textbf{Absatz}.
+\end{frame}
+\begin{frame}{Tabbing}
+    \begin{tabbing}
+    Nat\"urlich kann man auch in \LaTeX~Tabstopps setzen, wobei das \\umst\"andlicher als in \glqq normalen\grqq~Textverarbeitungsprogrammen ist.\\
+    Zun\"achst erstellt man eine \color{cpurple}tabbing\color{black}-Umgebung und erstellt anschlie{\ss}end \\eine Tabbing-Zeile:\\\vspace{1.5mm}
+    XXXX\color{cred}\textbackslash=\color{black}XXXXXX\color{cred}\textbackslash=\textbackslash kill\color{black}\\
+    XXXX\=XXXXXX\=\kill
+    \color{cred}\textbackslash= \color{black} steht hierbei f\"ur den Tabstopp und \color{cred}\textbackslash kill \color{black} bewirkt, dass diese Zeile \\nicht ausgegeben wird.
+    Hierdurch werden Tabstopps im Abstand von \\4x X bzw 10x X in jeder Zeile gesetzt. \\
+    Ein Tabstopp kann mit \color{cred}\textbackslash> \color{black}angesteuert werden.\\
+    Hier\\
+    \>ist\\
+    \>\>getabbt worden.
+    \end{tabbing}
+\end{frame}
+\subsection{Struktur im Text}\label{sec:toc}
+\begin{frame}{\"Uberschriften}
+    \LaTeX~bietet umfassende M\"oglichkeiten Texte zu strukturieren. 
+    \begin{itemize}
+        \item \color{cturkis}\textbackslash section\color{black}\{Titel\} erstellt eine neue \"Uberschrift erster Ordnung 
+        \item \color{cturkis}\textbackslash subsection\color{black}\{Titel\} erstellt eine \"Uberschrift zweiter Ordnung
+        \item \color{cturkis}\textbackslash subsubsection\color{black}\{Titel\} ja ratet mal ...
+        \item von Haus aus unterst\"utzt \LaTeX~nur 3 Gliederungsebenen (online gibts Hilfe \smiley)
+    \end{itemize}
+    Da wir gerade von einer Gliederung reden, diese kann mit \color{cturkis}\textbackslash tableofcontents \color{black}erstellt werden, wobei automatisch alle \"Uberschriften in der richtigen Reihenfolge und Nummerierung aufgef\"uhrt werden.
+\end{frame}
+\begin{frame}[fragile]{Nummerierung und Aufz\"ahlung}
+\begin{multicols}{2}
+Nummerierung
+\scriptsize
+\begin{tabbing}
+XXX\=XXXX\=XX\=\kill
+\color{cturkis}\textbackslash begin\{\color{cpurple}enumerate\color{black}\}\\
+\>\color{cred}\textbackslash item \color{black}Item 1\\
+\>\color{cred}\textbackslash item \color{black}Item 2\\
+\>\color{cred}\textbackslash item \color{cturkis}\textbackslash begin \color{black}\{\color{cpurple}enumerate\color{black}\}\\
+\>\>\>\color{cred}\textbackslash item \color{black}Item 3.1\\
+\>\>\>\color{cred}\textbackslash item \color{black}Item 3.1\\
+\>\>\color{cturkis}\textbackslash end \color{black}\{\color{cpurple}enumerate\color{black}\}\\
+\>\color{cred}\textbackslash item \color{black}Item 4\\
+\color{cturkis}\textbackslash end\{\color{cpurple}enumerate\color{black}\}\\
+\end{tabbing}
+\normalsize
+\begin{enumerate}
+    \item Item 1
+    \item Item 2
+    \item \begin{enumerate}
+            \item Item 3.1
+            \item Item 3.2
+          \end{enumerate}
+    \item Item 4
+\end{enumerate}
+\columnbreak
+Aufz\"ahlung
+\scriptsize
+\begin{tabbing}
+XXX\=XXXX\=XX\=\kill
+\color{cturkis}\textbackslash begin\{\color{cpurple}itemize\color{black}\}\\
+\>\color{cred}\textbackslash item \color{black}Item 1\\
+\>\color{cred}\textbackslash item \color{black}Item 2\\
+\>\color{cred}\textbackslash item \color{cturkis}\textbackslash begin \color{black}\{\color{cpurple}itemize\color{black}\}\\
+\>\>\>\color{cred}\textbackslash item \color{black}Item 3.1\\
+\>\>\>\color{cred}\textbackslash item \color{black}Item 3.1\\
+\>\>\color{cturkis}\textbackslash end \color{black}\{\color{cpurple}itemize\color{black}\}\\
+\>\color{cred}\textbackslash item \color{black}Item 4\\
+\color{cturkis}\textbackslash end\{\color{cpurple}itemize\color{black}\}\\
+\end{tabbing}
+\normalsize
+\begin{itemize}
+    \item Item 1
+    \item Item 2
+    \item \begin{itemize}
+            \item Item 3.1
+            \item Item 3.2
+          \end{itemize}
+    \item Item 4
+\end{itemize}
+\end{multicols}
+\end{frame}
+\subsection{Sonderzeichen}
+\begin{frame}{Sonderzeichen}
+    Wie jede andere (Programmier-) Sprache, besitzt auch \LaTeX~ einige Sonderzeichen, welche f\"ur Befehle reserviert sind und daher bei Verwendung escaped werden m\"ussen.
+    \begin{table}[]
+        \centering
+        \begin{tabular}{|c|c|c|}\hline
+            Zeichen & Funktion & Eingabe zur Erzeugung \\\hline
+            \% & Kommentar & \textbackslash\%  \\\hline
+            \$ & Formelumgebung & \textbackslash\$ \\\hline
+            \& & Spaltentrennung (Tabellen) & \textbackslash\& \\\hline
+            \{ \} & Befehlsparameter & \textbackslash\{ \textbackslash\} \\\hline
+            \# & - & \textbackslash\#\\\hline
+            \textbackslash & Befehlsbeginn & \textbackslash textbackslash\\\hline
+            \^~\_ & hoch-/tiefstellen & \textbackslash\^~ \textbackslash\_\\\hline
+            \~{} & Leerzeichen erzwingen &  \textbackslash\~{}\{\}\\\hline
+        \end{tabular}
+        \caption{Sonderzeichen}
+    \end{table}
+\end{frame}
+\begin{frame}{Sonderzeichen}
+    Weitere Sonderzeichen: (falls Taste nicht verf\"ugbar)
+    \begin{table}[]
+        \centering
+        \begin{tabular}{|c|c|}\hline
+            Zeichen & Eingabe \\\hline
+            \"A \"a (genauso wie \"o und \"u)& \textbackslash \grqq A  \textbackslash \grqq a  \\\hline
+            \ss & \textbackslash ss bzw \{\textbackslash ss\}\\\hline
+            \pounds & \textbackslash pounds \\\hline
+            \euro & \textbackslash euro (ben\"otigt package \color{cblue}eurosym\color{black})\\\hline
+            \glqq~~~~\grqq & \textbackslash glqq~~~~\textbackslash grqq (ben\"otigt package \color{cblue}babel\color{black})\\\hline
+            \flqq~~~~ \frqq & \textbackslash flqq~~~~\textbackslash frqq (ben\"otigt package \color{cblue}babel\color{black})\\\hline
+        \end{tabular}
+        \caption{Weitere Sonderzeichen}
+    \end{table}
+\end{frame}
